@@ -3,6 +3,7 @@ import axios from "axios";
 //data fetch를 위한 axios
 import Movie from "./movies";
 //같은 디렉토리 안에 있을 때는 ./으로 위치가 표시됨
+import "./app.css";
 
 class App extends React.Component {
   state = {
@@ -30,10 +31,14 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <div>
-        {isLoading
-          ? "Loading..."
-          : movies.map((movie) => (
+      <section className="container">
+        {isLoading ? (
+          <div className="loader">
+            <span className="loader__text">Loading...</span>
+          </div>
+        ) : (
+          <div className="movies">
+            {movies.map((movie) => (
               <Movie
                 key={movie.id}
                 id={movie.id}
@@ -41,9 +46,12 @@ class App extends React.Component {
                 title={movie.title}
                 summary={movie.summary}
                 poster={movie.medium_cover_image}
+                genres={movie.genres}
               />
             ))}
-      </div>
+          </div>
+        )}
+      </section>
     );
   }
 }
