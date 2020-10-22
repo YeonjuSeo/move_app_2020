@@ -1,3 +1,69 @@
 body {
-  background-color: #646de4;
+  background-color: #facf80;
+  height: 100%;
+}
+
+html,
+body,
+#tomato,
+.container {
+  display: flex;
+  padding: 15px 25px;
+  flex-direction: column;
+  justify-content: center;
+}
+.loader {
+  display: flex;
+  border-radius: 25px;
+  color: rgba(0, 0, 0, 0.836);
+  font-weight: bold;
+  padding: 20px;
+  font-size: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  color: #facf80;
+}
+.movies .movie {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: right;
+  margin: 35px 0px;
+  padding: 20px;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.836);
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.8);
+}
+.movie img {
+  position: absolute;
+  height: 180px;
+  width: 130px;
+  top: -50px;
+  right: 30px;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.8);
+}
+.movie .movie__title {
+  width: 60%;
+  margin-right: 10px;
+}
+.movie .movie__year {
+  margin: 10px 0px;
+}
+.movie .movie__genres {
+  display: flex;
+  text-decoration: none;
+  color: #b69f75;
+  font-size: 12px;
+}
+
+.movie .movie__genres div {
+  margin-right: 6px;
 }

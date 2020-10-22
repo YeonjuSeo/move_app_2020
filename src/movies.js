@@ -3,20 +3,23 @@ import PropTypes from "prop-types";
 import "./movie.css";
 
 function Movie({ year, title, summary, poster, genres }) {
+  const limited_summary = summary.substr(0, 150);
+  console.log(limited_summary);
+
   return (
     <div className="movie">
       <img src={poster} alt={title} title={title} />
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
         <h5 className="movie__year">{year}</h5>
-        <ul className="movie__genres">
+        <div className="movie__genres">
           {genres.map((genre, index) => (
-            <li key={index} className="genres__genre">
+            <div key={index} className="genres__genre">
               {genre}
-            </li>
+            </div>
           ))}
-        </ul>
-        <p className="movie__summary">{summary}</p>
+        </div>
+        <p className="movie__summary">{limited_summary}...</p>
       </div>
     </div>
   );
